@@ -1,10 +1,14 @@
 package com.vigli.deepdive.example.cleancodechapter15
 
-import junit.framework.ComparisonCompactor
 import junit.framework.TestCase
 
-
 class ComparisonCompactorTest : TestCase() {
+
+    fun testResultOk() {
+        val success = ComparisonCompactor(0, "b", "b").compact(null)
+        assertTrue("expected:<b> but was:<b>" == success)
+    }
+
     fun testMessage() {
         val failure = ComparisonCompactor(0, "b", "c").compact("a")
         assertTrue("a expected:<[b]> but was:<[c]>" == failure)
